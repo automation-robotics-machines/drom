@@ -1,0 +1,75 @@
+{
+    "experiment": {
+        "name": "StackCleanupNewReal",
+        "validate": true,
+        "logging": {
+            "terminal_output_to_txt": true,
+            "log_tb": true,
+            "log_wandb": false,
+            "wandb_proj_name": "debug"
+        },
+        "save": {
+            "enabled": true,
+            "every_n_seconds": null,
+            "every_n_epochs": 50,
+            "epochs": [],
+            "on_best_validation": false,
+            "on_best_rollout_return": false,
+            "on_best_rollout_success_rate": false
+        },
+        "epoch_every_n_steps": 100,
+        "validation_epoch_every_n_steps": 10,
+        "env": null,
+        "additional_envs": null,
+        "render": false,
+        "render_video": true,
+        "keep_all_videos": false,
+        "video_skip": 5,
+        "rollout": {
+            "enabled": true,
+            "n": 50,
+            "horizon": 400,
+            "rate": 50,
+            "warmstart": 0,
+            "terminate_on_success": true
+        }
+    },
+    "train": {
+        "batch_size": 32,
+        "conditioning_type": "attention",
+        "cuda": true,
+        "data": [
+            {
+                "eval": true,
+                "lang": "Put the red cube on top of the green one.",
+                "path": "/mnt/arm_core/Dataset/DatasetVincenzo/mimicgen/MugCleanup_D0/dmp/image_200.hdf5"
+            }
+        ],
+        "diffusion_loss": "l2",
+        "diffusion_model_class": "GaussianDiffusionModel",
+        "horizon": 64,
+        "include_velocity": false,
+        "lr": 0.0001,
+        "n_diffusion_steps": 25,
+        "normalizer": "LimitsNormalizer",
+        "num_train_steps": 100000,
+        "number_of_trajs_per_task": 300,
+        "output_dir": "drom/trained_models/",
+        "predict_epsilon": true,
+        "seed": 1,
+        "self_attention": true,
+        "steps_til_ckpt": 5000,
+        "steps_til_summary": 2000,
+        "tasks": ["StackCleanupNewReal"],
+        "unet_dim_mults_option": 0,
+        "unet_input_dim": 32,
+        "use_ema": true,
+        "use_amp": false,
+        "variance_schedule": "exponential"
+    },
+    "wandb_options" :{
+        "wandb_mode": "online",
+        "wandb_entity": "vincenzo-pomponi-supsi",
+        "wandb_project": "drom"
+    }
+}

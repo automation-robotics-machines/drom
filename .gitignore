@@ -1,0 +1,31 @@
+trained_models/
+hdf5/
+csv/
+tensors/
+logs/
+wandb/
+lgp_models/
+robosuite-task-zoo/
+robomimic/
+mimicgen/
+
+# Ignore system-specific files
+*.DS_Store
+*.log
+
+# Ignore Python bytecode
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info
+
+# Ignore virtual environments
+venv/
+.env/
+
+# Ignore Jupyter Notebook checkpoints (if using)
+.ipynb_checkpoints/
+
+# Ignore other typical temporary files
+*.tmp
+*.swp
